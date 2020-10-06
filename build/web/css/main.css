@@ -1,0 +1,65 @@
+img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.stories {
+    display: block;
+    margin: auto;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+.row,
+.row>.column {
+    padding: 8px;
+}
+
+.give {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 2em;
+}
+
+.why_img1 {
+    margin: 1em 4em 1em 1em;
+    float: left;
+
+}
+
+.why_img2 {
+    margin: 1em 1em 1em 4em;
+    float: right;
+}
+
+.type_buttons {
+    justify-content: center;
+    display: flex;
+    margin: 2em;
+}
+
+.heading {
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+.searchbar {
+    padding-top: 5em;
+}
+
+@media only screen and (max-width: 600px) {
+
+    img,
+    .why_img1,
+    .why_img2 {
+        display: grid;
+        align-content: center;
+        grid-area: image;
+        width: 100%;
+        margin: 1em 0 1em 0;
+    }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Donour Form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <section id="donour">
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+                    <h4 class="mt-5 text-center" style="color: rgb(194, 61, 61);">Fill the form and be a saviour!
+                    </h4>
+                    <h1 class="mb-3 text-center heading">Form for Donation Volunteering</h1>
+                    <form class="mb-3">
+                        <div class="form-group">
+                            <label for="firstName">Name:</label>
+                            <input type="text" class="form-control" name="name" placeholder="Donour's Name" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Mobile Number:</label>
+                            <input type="text" class="form-control" name="mobile" required
+                                placeholder="Donour's Phone" />
+                        </div>
+                        <label>Blood Type: </label>
+                        <div class="row no-gutters">
+                            <div class="form-group col">
+                                <select class="form-control" id="blood" name="blood">
+                                    <option value="">Choose Blood Type</option>
+                           <option value="A Positive">A+</option>
+                        <option value="O Positive">O+</option>
+                        <option value="B Positive">B+</option>
+                        <option value="AB Positive">AB+</option>
+                        <option value="A Negetive">A-</option>
+                        <option value="O Negetive">O-</option>
+                        <option value="B Negetive">B-</option>
+                        <option value="AB Negetive">AB-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label>Birthday:</label>
+                        <div class="row no-gutters">
+                            <div class="form-group col-4">
+                                <label for="birthdayDay" class="sr-only">Birthday day</label>
+                                <select class="form-control" id="birthdayDay" name="day">
+                                    <option value="">Day</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="birthdayMonth" class="sr-only">Birthday month</label>
+                                <select class="form-control" id="birthdayMonth" name="month">
+                                    <option value="">Month</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="birthdayYear" class="sr-only">Birthday year</label>
+                                <select class="form-control" id="birthdayYear" name="year">
+                                    <option value="1980">1980</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" name="city" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="city">State</label>
+                            <input type="state" class="form-control" name="state" required />
+                        </div>
+                        <div class="text-center">
+                            <input class="btn btn-primary btn-block mb-3" type="submit" value="Submit">
+                        </div>
+                    </form>
+                            <%@page import= "java.sql.*" %>
+                    <%
+            
+        String name= request.getParameter("name");
+        if(name!=null)
+        {
+            String mobile = request.getParameter("mobile");
+            String blood = request.getParameter("blood");
+            String day = request.getParameter("day");
+            String month = request.getParameter("month");
+            String year = request.getParameter("year");
+            int intyear = Integer.parseInt(year);
+            String bdate = day+" "+month+" "+year; 
+            String city = request.getParameter("city");
+            String state = request.getParameter("state");
+            String currentyear = new java.text.SimpleDateFormat("yyyy").format(new java.util.Date());
+            int intcurrentyear = Integer.parseInt(currentyear);
+            int age= (intcurrentyear)-(intyear);
+            String address = city+", "+state;
+            
+        String sql="INSERT INTO `donors`(`name`, `mobile`, `D_bloodgroup`, `birth_date`, `age`, `city`, `address`) VALUES ('"+name+"','"+mobile+"', '"+blood+"','"+bdate+"', '"+age+"','"+city+"', '"+address+"')";
+        try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_bank?serverTimezone=UTC","root","");
+        Statement st = con.createStatement();
+        int n=st.executeUpdate(sql);
+        if(n>0)
+        {
+            response.sendRedirect("DonationSuccess.jsp");
+        }
+        
+        }
+        
+         catch(Exception e)
+        {   
+        %> <script> alert("Donor with current mobile number aready exists!"); </script>
+        <%
+        }
+        }
+        
+        %>
+
+        <form>
+                        <div class="text-center">
+                            <p>You will need an account to fill the form.<br>Don't have one?</p>
+                            <a href="SignUp.jsp#signup" class="btn btn-success btn-block">Create an account</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
