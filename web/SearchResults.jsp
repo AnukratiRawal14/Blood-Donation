@@ -57,56 +57,47 @@ body {
 
 <body>
 <%@page import="java.sql.*"%>
-        <%
-          try
-          {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_bank?serverTimezone=UTC","root","");
-            String city = request.getParameter("city");
-            if (city!=null)
-            {
-            String blood = request.getParameter("blood");
-            String require = request.getParameter("require");
+<%
+          try {
+                 Class.forName("com.mysql.jdbc.Driver");
+                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_bank","blood", "blood");
+                  String city = request.getParameter("city");
+                  
+                  if (city!=null) {
+                       String blood = request.getParameter("blood");
+                       String require = request.getParameter("require");
             
-            if(require.equals("1"))
-            {
-                Statement st= con.createStatement();
-             ResultSet rs=st.executeQuery("Select * from donors WHERE city="+city+" AND D_bloodgroup="+blood);
-             for(int i=0;i<4;i++)
-             {
-                 out.println("<div class='row'>");
-                 for(int j=0; j<4; j++)
-                 {
-                    String name=String.valueOf(rs.getInt(1));
-                    String mobile=rs.getString(2);
-                    String D_bloodgroup=rs.getString(3);
-                    String age=rs.getString(4);
-                    String address=rs.getString(5);
-                    out.println("<div class='col-3'>");
-                    out.println("<div class='card'>"); 
-                    
-                    out.println(name);
-                    out.println(mobile);
-                    out.println(D_bloodgroup);
-                    out.println(age);
-                    out.println(address);
-                    
-                    out.println("</div>");
-                    out.println("</div>");
-                    
-                 }
-                 out.println("</div>");
-             }
-            }
-
-            }   
-        }
-          catch(Exception e)
-          {
-            out.println(e);
-          }
-             
-        %>
+                       if(require.equals("1")) {
+                              Statement st= conn.createStatement();
+                              ResultSet rs=st.executeQuery("Select * from donorform WHERE city="+city+" AND D_bloodgroup="+blood);
+                              
+                              for(int i=0;i<4;i++) {
+                                     out.println("<div class='row'>");
+                                     
+                                     for(int j=0; j<4; j++) {
+                                             String name=String.valueOf(rs.getInt(1));
+                                             String mobile=rs.getString(2);
+                                             String D_bloodgroup=rs.getString(3);
+                                             String age=rs.getString(4);
+                                             String address=rs.getString(5);
+                                             out.println("<div class='col-3'>");
+                                             out.println("<div class='card'>"); 
+                                             out.println(name);
+                                             out.println(mobile);
+                                             out.println(D_bloodgroup);
+                                             out.println(age);
+                                             out.println(address);
+                                             out.println("</div>");
+                                             out.println("</div>");
+                                     }
+                                     out.println("</div>");
+                             }
+                      } 
+               }   
+          }  catch(Exception e) {
+                out.println(e);
+          }             
+ %>
     
 </body>
 </html>

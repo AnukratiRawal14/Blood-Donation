@@ -1,4 +1,4 @@
-<%@page import="java.util.Random"%>
+                                   <%@page import="java.util.Random"%>
                                   <%@page import="java.io.BufferedReader" %>
                                   <%@page import ="java.io.IOException" %> 
                                   <%@page import="java.io.InputStreamReader"%>
@@ -9,23 +9,12 @@
                                   <%@page import="javax.net.ssl.HttpsURLConnection"%>     
                                   
                                 <%try{
-                                     //String name=request.getParameter("name");
-                                     // String email=request.getParameter("email");
-                                     //String password=request.getParameter("password");
-                                     //session.setAttribute("name",name);
-                                     //session.setAttribute("email",email);
-                                     //session.setAttribute("password",password);
-                                     
+                                    
                                      String phone=request.getParameter("mobile");
-                                     session.setAttribute("mobile",phone);
-                                  
                                      String apikey="Vs9YqKPl7xfsfSepXielVgVZHNTm2vEfCDmIVkA269QHjH5lwIfrqHkI3Pzp";
                                      String sendId="FSTSMS";
                                      String number = phone;
-                                     Random rand = new Random();
-                                     int otp = rand.nextInt(900000) + 100000;
-                                     session.setAttribute("otp",otp);
-                                     String message=".your OTP is:"+otp;
+                                     String message="Donor is available ";
                                      message=URLEncoder.encode(message, "UTF-8");
                              //        out.println(message);
                                      String language="english";

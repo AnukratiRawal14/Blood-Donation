@@ -210,6 +210,9 @@
                             saviour!
                         </h4>
                         <h2 class="mb-3 text-center heading"><i class="fas fa-heartbeat"></i> Create a new account</h2>
+                        
+                        <! -------------InsertData /OTP-Process ---------------!>
+                        
                         <form class="mb-3" action="otpprocess.jsp">
                             <div class="form-group">
                                 <label for="firstName">Name:</label>

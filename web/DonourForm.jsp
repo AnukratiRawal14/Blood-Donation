@@ -21,7 +21,10 @@
                     <h4 class="mt-5 text-center" style="color: rgb(194, 61, 61);">Fill the form and be a saviour!
                     </h4>
                     <h1 class="mb-3 text-center heading">Form for Donation Volunteering</h1>
-                    <form class="mb-3">
+                    
+                    <! --------------Donor Form ----------!>
+                    
+                    <form class="mb-3" action="DonorData.jsp">
                         <div class="form-group">
                             <label for="firstName">Name:</label>
                             <input type="text" class="form-control" name="name" placeholder="Donour's Name" required />
@@ -145,50 +148,8 @@
                             <input class="btn btn-primary btn-block mb-3" type="submit" value="Submit">
                         </div>
                     </form>
-                            <%@page import= "java.sql.*" %>
-                    <%
-            
-        String name= request.getParameter("name");
-        if(name!=null)
-        {
-            String mobile = request.getParameter("mobile");
-            String blood = request.getParameter("blood");
-            String day = request.getParameter("day");
-            String month = request.getParameter("month");
-            String year = request.getParameter("year");
-            int intyear = Integer.parseInt(year);
-            String bdate = day+" "+month+" "+year; 
-            String city = request.getParameter("city");
-            String state = request.getParameter("state");
-            String currentyear = new java.text.SimpleDateFormat("yyyy").format(new java.util.Date());
-            int intcurrentyear = Integer.parseInt(currentyear);
-            int age= (intcurrentyear)-(intyear);
-            String address = city+", "+state;
-            
-        String sql="INSERT INTO `donors`(`name`, `mobile`, `D_bloodgroup`, `birth_date`, `age`, `city`, `address`) VALUES ('"+name+"','"+mobile+"', '"+blood+"','"+bdate+"', '"+age+"','"+city+"', '"+address+"')";
-        try
-        {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_bank?serverTimezone=UTC","root","");
-        Statement st = con.createStatement();
-        int n=st.executeUpdate(sql);
-        if(n>0)
-        {
-            response.sendRedirect("DonationSuccess.jsp");
-        }
-        
-        }
-        
-         catch(Exception e)
-        {   
-        %> <script> alert("Donor with current mobile number aready exists!"); </script>
-        <%
-        }
-        }
-        
-        %>
-
-        <form>
+                      
+                   <form>
                         <div class="text-center">
                             <p>You will need an account to fill the form.<br>Don't have one?</p>
                             <a href="SignUp.jsp#signup" class="btn btn-success btn-block">Create an account</a>

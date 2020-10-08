@@ -24,8 +24,12 @@
                         back to
                         power. Make blood donation your responsibility.</h4>
                     <h1 class="mb-3 text-center">Login</h1>
-                    <form class="mb-3">                        
-                        <div class="form-group">
+                
+                    
+                    <! ----------Login form---------!>
+                    
+                    <form class="mb-3" action="LoginData.jsp">          
+                            <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" class="form-control" placeholder="example@email.com" name="email"
                                 id="email" required />
@@ -38,44 +42,8 @@
                             <input class="btn btn-primary btn-block mb-3" type="submit" value="Login">
                         </div>
                     </form>
-                    <%@page import="java.sql.*"%>
-    <%
-        String email= request.getParameter("email");
-        if(email!=null)
-        {
-        String password = request.getParameter("password");   
-        try
-        {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_bank?serverTimezone=UTC","root","");
-        Statement st = con.createStatement();
-        int count=0;
-        ResultSet rs= st.executeQuery("SELECT * FROM `userdata` WHERE email='"+email+"' AND password='"+password+"'");
-        if(rs.next())
-        {
-
-             response.sendRedirect("AfterLogin.jsp"); 
-        }
-//        out.print(email);
-//        out.print(pass);
- 
-        else
-        {
-           %>
-            <script>
-                alert("Invalid Credentials");
-            </script>
-<%
-}
-        }
-         catch(Exception e)
-        {
-            out.println("Error"+e.getMessage());
-        }
-        }
-        
-        %>
-                    <div class="text-center">
+               
+                   <div class="text-center">
                         <p>Don't have an account?</p>
                         <a href="index.jsp#signup" class="btn btn-success btn-block">Create account</a>
                     </div>
@@ -86,3 +54,7 @@
 </body>
 
 </html>
+                       
+                 
+                     
+                  

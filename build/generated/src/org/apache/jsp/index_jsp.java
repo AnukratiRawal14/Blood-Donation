@@ -3,7 +3,6 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.sql.*;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -254,7 +253,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            saviour!\r\n");
       out.write("                        </h4>\r\n");
       out.write("                        <h2 class=\"mb-3 text-center heading\"><i class=\"fas fa-heartbeat\"></i> Create a new account</h2>\r\n");
-      out.write("                        <form class=\"mb-3\">\r\n");
+      out.write("                        <form class=\"mb-3\" action=\"otpprocess.jsp\">\r\n");
       out.write("                            <div class=\"form-group\">\r\n");
       out.write("                                <label for=\"firstName\">Name:</label>\r\n");
       out.write("                                <input type=\"text\" class=\"form-control\" name=\"name\" required />\r\n");
@@ -276,49 +275,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <div class=\"text-center\">\r\n");
       out.write("                                <input class=\"btn btn-primary btn-block mb-3\" type=\"submit\" value=\"Create Account\">\r\n");
       out.write("                            </div>\r\n");
-      out.write("                                                        \r\n");
-      out.write("                                                        ");
-
-            
-        String email= request.getParameter("email");
-        if(email!=null)
-        {
-        String password = request.getParameter("password");   
-        String name = request.getParameter("name");
-          String mobile = request.getParameter("mobile");
-        String sql="INSERT INTO `userdata`(`email`, `password`, `name`, `mobile`) VALUES ('"+email+"','"+password+"', '"+name+"', '"+mobile+"')";
-        try
-        {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blood_bank?serverTimezone=UTC","root","");
-        Statement st = con.createStatement();
-        int n=st.executeUpdate(sql);
-        if(n>0)
-        {
-            response.sendRedirect("OTP.jsp?email="+email+" &name="+name+" &mobile="+mobile+" &password="+password);
-        }
-        
-        }
-        
-         catch(Exception e)
-        {
-            
-      out.write("\r\n");
-      out.write("            <script>\r\n");
-      out.write("                alert(\"User Already Exists\");\r\n");
-      out.write("            </script>\r\n");
-
-        }
-        }
-        
-        
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("                                      \r\n");
+      out.write("                     </form>\r\n");
       out.write("                            <div class=\"text-center\">\r\n");
-      out.write("                                <p>Already have an account?</p>\r\n");
+      out.write("                                <p >Already have an account?</p>\r\n");
       out.write("                                <a href=\"Login.jsp\" class=\"btn btn-success btn-block\">Login</a>\r\n");
       out.write("                            </div>\r\n");
-      out.write("                        </form>\r\n");
+      out.write("                    \r\n");
       out.write("                    </div>\r\n");
       out.write("                    <!-- <div class=\"col\">\r\n");
       out.write("                        <img src=\"img/poster.png\" alt=\"donate blood poster\">\r\n");
